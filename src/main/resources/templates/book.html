@@ -1,17 +1,27 @@
 <html>
 
 <head>
-    <title>Book</title>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
-    Title: <span th:text="${book.title}"/>
-    <br>
-    Author: <span th:text="${book.author}"/>
-    <br>
-    Description: <span th:text="${book.description}"/>
-    <br>
-   
+    <a href="/">Back</a>
+    <hr />
+    <table id="book-detail">
+        <tr>
+            <th>Title:</th>
+            <td th:text="${book.title}" />
+        </tr>
+        <tr>
+            <th>Author:</th>
+            <td th:text="${book.author}" />
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td th:text="${book.description}" />
+        </tr>
+    </table>
 </body>
 
 </html>

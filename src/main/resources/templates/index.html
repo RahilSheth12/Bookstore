@@ -2,10 +2,11 @@
 
 <head>
     <title>Home Page</title>
+    <link rel="stylesheet" href="/css/main.css"/>
 </head>
 
 <body>
-    <table>
+    <table id="books">
         <thead>
             <th>Title</th>
             <th>Author</th>
@@ -15,13 +16,15 @@
             <tr th:each="book, iStat : ${books}" th:style="${iStat.odd}? 'font-weight: bold;'"
                 th:alt-title="${iStat.even}? 'even' : 'odd'">
                 <td>
-                    <a th:href="@{/${book.title}}" th:text="${book.title}"/>
+                    <a th:href="@{${book.title}}" th:text="${book.title}"/>
                 </td>
                 <td th:text="${book.author}" />
                 <td th:text="${book.description}" />
             </tr>
         </tbody>
     </table>
+    <hr>
+    <a href="booksearch.html">Search by book title</a>
 </body>
 
 </html>

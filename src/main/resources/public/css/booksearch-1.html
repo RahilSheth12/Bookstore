@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <div>
+        <form method="POST" action="/booksearch" modelAttribute="book">
+            <label for="title">Title (*contains)</label>
+            <input type="text" id="title" name="title" placeholder="Book title.."/>
+
+            <input type="submit" value="Search by book title"/>
+        </form>
+    </div>
+</body>
+
+</html>
