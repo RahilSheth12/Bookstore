@@ -19,8 +19,9 @@ public class DataLoader implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        this.repository.save(new Book("Apple", "Apple", "Apple"));
-        this.repository.save(new Book("Banna", "Banna", "Banna"));  
+        this.repository.save(new Book("Jurassic Park", "Michael Crichton", "Dino"));
+        this.repository.save(new Book("Star Wars", "George Lucas", "Ankin"));  
+        this.repository.save(new Book("Harry Potter", "George Lucas", "Ankin"));
     }
     
 }

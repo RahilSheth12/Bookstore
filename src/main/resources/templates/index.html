@@ -6,6 +6,35 @@
 </head>
 
 <body>
+    <div>
+        <!--th: thymeleaf, @{/} ==> it means a string resolver, ${...} ==> theres a varbile attriubute for the object
+        https://www.thymeleaf.org/doc/articles/standardurlsyntax.html-->
+
+        <form action="#" method="POST" th:action="@{/}" th:object="${book}">
+            <label for="title">Title (*exact)</label>
+            <input type="text" id="title" th:name="title" placeholder="Plz enter Book Title..."/>
+            <label for="author">Author (*exact)</label>
+            <input type="text" id="author" th:name="author" placeholder="Plz enter Book Author..."/>
+            <input type="submit" value="Seach the book title!"/>
+        </form> 
+    </div>
+
+    <div>
+        <form action="#" method="POST" th:action="@{/add_book}" th:object="${book}">
+            <label for="title">Title...</label>
+            <input type="text" id="title" th:name="title" placeholder="Create Book Title..."/>
+            <label for="author">Author...</label>
+            <input type="text" id="author" th:name="author" placeholder="Create Author Name..."/>
+            <label for="description">Description...</label>
+            <input type="text" id="description" th:name="description" placeholder="Create a Description..."/>
+            <input type="submit" value="Create the Book!"/>
+        </form>
+    </div>
+
+
+
+
+    <div>
     <table id="books">
         <thead>
             <th>Title</th>
@@ -13,6 +42,7 @@
             <th>Description</th>
         </thead>
         <tbody>
+            <!-- th:each creates an enhanced for-loop-->
             <tr th:each="book, iStat : ${books}" th:style="${iStat.odd}? 'font-weight: bold;'"
                 th:alt-title="${iStat.even}? 'even' : 'odd'">
                 <td>
@@ -20,11 +50,14 @@
                 </td>
                 <td th:text="${book.author}" />
                 <td th:text="${book.description}" />
+                <td> 
+                <a th:href="@{'/remove'(id=${book?.id})}"> Delete </a>
+                </td>
             </tr>
         </tbody>
     </table>
+    </div>
     <hr>
-    <a href="booksearch.html">Search by book title</a>
 </body>
 
 </html>

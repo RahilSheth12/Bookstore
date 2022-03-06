@@ -11,17 +11,39 @@
     <table id="book-detail">
         <tr>
             <th>Title:</th>
-            <td th:text="${book.title}" />
+            <td th:text="${book?.title}" />
         </tr>
         <tr>
             <th>Author:</th>
-            <td th:text="${book.author}" />
+            <td th:text="${book?.author}" />
         </tr>
         <tr>
             <th>Description:</th>
-            <td th:text="${book.description}" />
+            <td th:text="${book?.description}" />
         </tr>
     </table>
+
+    <div>
+        <!--Create a save form that can create a new book that uses .save-->
+        <!-- <form action="#" method="POST" th:action="@{/}" th:object="${book}">
+            <label for="title">Title...</label>
+            <input type="text" id="title" th:name="title" placeholder="Plz enter Book Title..."/>
+            <label for="author">Author...</label>
+            <input type="text" id="author" th:name="author" placeholder="Plz enter Book Author..."/>
+            <input type="submit" value="Seach the book title!"/>
+        </form>  -->
+        <!-- <form action="#" method="POST" th:action="@{/add_book}" th:object="${book}">
+            <label for="title">Title...</label>
+            <input type="text" id="title" th:name="title" placeholder="Create Book Title..."/>
+            <label for="author">Author...</label>
+            <input type="text" id="author" th:name="title" placeholder="Create Author Name..."/>
+            <label for="description">Description...</label>
+            <input type="text" id="description" th:name="title" placeholder="Create a Description..."/>
+            <input type="submit" value="Create the book title!"/>
+        </form> -->
+
+
+    </div>
 </body>
 
 </html>
